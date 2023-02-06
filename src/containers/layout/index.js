@@ -1,15 +1,7 @@
 import React from 'react'
-import {Route, Switch} from 'react-router'
+// import routes from '../../routes'
 
-import Phones from '../phones/index'
-
-const routes = (
-  <Switch>
-    <Route path="/" component={Phones} exact />
-  </Switch>
-)
-
-const Layout = () => {
+const Layout = ({children}) => {
   return (
     <div className="view-container">
       <div className="container">
@@ -21,7 +13,7 @@ const Layout = () => {
             sint rerum, ea perspiciatis nemo similique fugit nihil magnam,
             quidem illo numquam?
           </div>
-          <div className="col-md-9">{routes}</div>
+          <div className="col-md-9">{children}</div>
         </div>
       </div>
     </div>

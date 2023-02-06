@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 
 import {fetchPhones, loadMorePhones} from '../../action'
 import {getPhonesSelector} from '../../selectors'
+import Layout from '../layout'
 
 class Phones extends Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class Phones extends Component {
   }
   renderPhone(phone, index) {
     const shortDescription = `${phone.description.slice(0, 60)}...`
-    console.log(shortDescription)
+
     return (
       <div className="col-sm-4 col-lg-4 col-md-4 book-list" key={index}>
         <div className="thumbnail">
@@ -37,7 +38,7 @@ class Phones extends Component {
   render() {
     const {phones, loadMorePhones} = this.props
     return (
-      <div>
+      <Layout>
         <div className="books row">
           {phones.map((phone, index) => this.renderPhone(phone, index))}
         </div>
@@ -51,7 +52,7 @@ class Phones extends Component {
             </button>
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

@@ -1,6 +1,7 @@
 import {
   FETCH_PHONES_SUCCESS,
   LOAD_MORE_PHONES_SUCCESS,
+  FETCH_PHONES_BY_ID_SUCCESS,
 } from '../action/actionTypes'
 
 const initialState = {}
@@ -20,6 +21,10 @@ export default (state = initialState, {type, payload}) => {
         return items
       }, {})
       return {...state, ...moreValues}
+
+    case FETCH_PHONES_BY_ID_SUCCESS:
+      return {...state, ...state.payload, ...payload.id}
+
     default:
       return state
   }
