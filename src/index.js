@@ -13,9 +13,9 @@ import createRootReducer from './reducers'
 import Layout from './containers/layout'
 // ---------
 const history = createBrowserHistory()
-console.log('history', history)
+
 const middlewares = [thunk, routerMiddleware(history)]
-const store = createStore(
+export const store = createStore(
   createRootReducer(history),
   composeWithDevTools(applyMiddleware(...middlewares))
 )

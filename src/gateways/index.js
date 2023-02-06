@@ -6,4 +6,8 @@ export const fetchPhones = async () => {
     // reject('error') // test Error
   })
 }
-console.log('fetchPhones in gateway', fetchPhones())
+export const loadMorePhones = async ({offset}) => {
+  return new Promise((resolve, reject) => {
+    resolve(phones)
+  })
+}

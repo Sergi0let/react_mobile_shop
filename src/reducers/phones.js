@@ -1,17 +1,25 @@
-import {FETCH_PHONES_SUCCESS} from '../action/actionTypes'
+import {
+  FETCH_PHONES_SUCCESS,
+  LOAD_MORE_PHONES_SUCCESS,
+} from '../action/actionTypes'
 
-const initialState = {
-  phones: [],
-}
+const initialState = {}
 
 export default (state = initialState, {type, payload}) => {
   switch (type) {
     case FETCH_PHONES_SUCCESS:
-      return {
-        ...state,
-        phones: state.phones.concat(payload),
-      }
+      const newValue = payload.reduce((items, el) => {
+        items[el['id']] = el
+        return items
+      }, {})
+      return {...state, ...newValue}
 
+    case LOAD_MORE_PHONES_SUCCESS:
+      const moreValues = payload.reduce((items, el) => {
+        items[el['id']] = el
+        return items
+      }, {})
+      return {...state, ...moreValues}
     default:
       return state
   }

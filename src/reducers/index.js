@@ -8,6 +8,5 @@ export default (history) =>
   combineReducers({
     phones,
     phonesPage,
-
     router: connectRouter(history),
   })
