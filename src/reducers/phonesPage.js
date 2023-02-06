@@ -18,7 +18,7 @@ export default (state = initialState, {type, payload}) => {
     case LOAD_MORE_PHONES_SUCCESS:
       const ids = payload.map(({id}) => id)
       return {
-        ids: [...state.ids, ...ids],
+        ids: state.ids.concat(ids),
       }
     default:
       return state

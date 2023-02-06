@@ -11,3 +11,10 @@ export const loadMorePhones = async ({offset}) => {
     resolve(phones)
   })
 }
+export const fetchPhoneById = async (id) => {
+  return new Promise((resolve, reject) => {
+    const phone = phones.filter((phone) => phone.id === id)
+
+    resolve(phone)
+  })
+}
