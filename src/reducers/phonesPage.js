@@ -1,7 +1,7 @@
 import {FETCH_PHONES_SUCCESS} from '../action/actionTypes'
 
 const initialState = {
-  phones: [],
+  ids: [],
 }
 
 export default (state = initialState, {type, payload}) => {
@@ -9,9 +9,8 @@ export default (state = initialState, {type, payload}) => {
     case FETCH_PHONES_SUCCESS:
       return {
         ...state,
-        phones: state.phones.concat(payload),
+        ids: Object.values(payload).map(({id}) => id),
       }
-
     default:
       return state
   }

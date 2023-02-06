@@ -6,4 +6,4 @@ export const fetchPhones = async () => {
     // reject('error') // test Error
   })
 }
-console.log('fetchPhones()', fetchPhones())
+console.log('fetchPhones in gateway', fetchPhones())
