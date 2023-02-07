@@ -44,7 +44,7 @@ export default [
     size: '124.4mm x 59.2mm x 8.97mm (4.9 x 2.33 x 0.35)',
     weight: '132 grams (4.7 ounces) with battery',
     display: '4.0 326 pixel density',
-    battery: '1480 mAh',
+    battery: '2000 mAh',
     memory: '16GB, 32GB and RAM 1 GB',
   },
   {
