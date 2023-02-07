@@ -24,7 +24,6 @@ export default (state = initialState, {type, payload}) => {
       return {...state, ...moreValues}
 
     case FETCH_PHONES_BY_ID_SUCCESS:
-      console.log('payload', payload)
       const currentValue = payload.reduce((items, el) => {
         items[el['id']] = el
         return items
