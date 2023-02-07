@@ -13,6 +13,7 @@ export default (state = initialState, {type, payload}) => {
         items[el['id']] = el
         return items
       }, {})
+      console.log(newValue)
       return {...state, ...newValue}
 
     case LOAD_MORE_PHONES_SUCCESS:
@@ -23,7 +24,13 @@ export default (state = initialState, {type, payload}) => {
       return {...state, ...moreValues}
 
     case FETCH_PHONES_BY_ID_SUCCESS:
-      return {...state, ...state.payload, ...payload.id}
+      console.log('payload', payload)
+      const currentValue = payload.reduce((items, el) => {
+        items[el['id']] = el
+        return items
+      }, {})
+
+      return currentValue
 
     default:
       return state

@@ -53,6 +53,7 @@ export const fetchPhoneById = (id) => async (dispatch) => {
   dispatch({type: FETCH_PHONES_BY_ID_START})
   try {
     const phone = await fetchPhoneByIdApi(id)
+    console.log('action', phone)
     dispatch({type: FETCH_PHONES_BY_ID_SUCCESS, payload: phone})
   } catch (err) {
     dispatch({type: FETCH_PHONES_BY_ID_FAILURE, payload: err, error: true})
