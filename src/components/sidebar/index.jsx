@@ -1,4 +1,5 @@
 import React from 'react'
+import Categories from '../categories'
 
 import BasketCard from '../basketCart'
 import Search from '../search'
@@ -8,6 +9,7 @@ const Sidebar = () => {
     <div>
       <BasketCard />
       <Search />
+      <Categories />
     </div>
   )
 }

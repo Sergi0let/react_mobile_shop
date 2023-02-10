@@ -70,8 +70,8 @@ class Phones extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  phones: getPhonesSelector(state),
+const mapStateToProps = (state, ownProps) => ({
+  phones: getPhonesSelector(state, ownProps),
 })
 
 const mapDispatchToProps = {
