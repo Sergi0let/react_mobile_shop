@@ -7,6 +7,7 @@ import Phones from './containers/phones'
 export default (
   <Switch>
     <Route path="/" component={Phones} exact />
+    <Route path="/categories/:id" component={Phones} />
     <Route path="/phones/:id" component={Phone} />
   </Switch>
 )
