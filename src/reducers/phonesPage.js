@@ -1,10 +1,12 @@
 import {
   FETCH_PHONES_SUCCESS,
   LOAD_MORE_PHONES_SUCCESS,
+  SEARCH_PHONE,
 } from '../action/actionTypes'
 
 const initialState = {
   ids: [],
+  search: ' ',
 }
 
 export default (state = initialState, {type, payload}) => {
@@ -22,6 +24,12 @@ export default (state = initialState, {type, payload}) => {
         ...state,
         ids: state.ids.concat(ids),
       }
+    case SEARCH_PHONE:
+      return {
+        ...state,
+        search: payload,
+      }
+
     default:
       return state
   }

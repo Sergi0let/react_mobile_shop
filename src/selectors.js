@@ -1,7 +1,11 @@
 export const getPhonesById = (state, id) => state.phones[id]
 
 export const getPhonesSelector = (state) => {
-  return state.phonesPage.ids.map((id) => getPhonesById(state, id))
+  // const applySearch = item =>
+  const phones = state.phonesPage.ids
+    .map((id) => getPhonesById(state, id))
+    .filter((item) => item.name.includes(state.phonesPage.search))
+  return phones
 }
 
 export const getRenderPhonesLengthSelector = (state) => {
