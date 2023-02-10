@@ -13,7 +13,7 @@ export default (state = initialState, {type, payload}) => {
         items[el['id']] = el
         return items
       }, {})
-      console.log(newValue)
+
       return {...state, ...newValue}
 
     case LOAD_MORE_PHONES_SUCCESS:
