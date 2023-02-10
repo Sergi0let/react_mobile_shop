@@ -1,5 +1,5 @@
 import React from 'react'
-// import routes from '../../routes'
+import Sidebar from '../../components/sidebar'
 
 const Layout = ({children}) => {
   return (
@@ -7,11 +7,7 @@ const Layout = ({children}) => {
       <div className="container">
         <div className="row">
           <div className="col-md-3">
-            Sidebar <br />
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta
-            repellendus esse cupiditate sit iste voluptatem quaerat libero dolor
-            sint rerum, ea perspiciatis nemo similique fugit nihil magnam,
-            quidem illo numquam?
+            <Sidebar />
           </div>
           <div className="col-md-9">{children}</div>
         </div>
