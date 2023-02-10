@@ -22,8 +22,8 @@ const BasketCard = () => {
 
 const mapStateToProps = (state) => {
   return {
-    totalBasketCount: getTotalBasketCount(state),
-    totalPrice: getTotalBasketPrice(state),
+    // totalBasketCount: getTotalBasketCount(state),
+    // totalPrice: getTotalBasketPrice(state),
   }
 }
 
