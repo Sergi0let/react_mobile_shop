@@ -29,7 +29,10 @@ export default (state = initialState, {type, payload}) => {
         return items
       }, {})
 
-      return currentValue
+      return {
+        ...state,
+        ...currentValue,
+      }
 
     default:
       return state

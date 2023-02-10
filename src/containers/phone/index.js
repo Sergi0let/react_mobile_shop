@@ -1,8 +1,11 @@
 import React, {Component} from 'react'
 // import Layout from '../layout'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {fetchPhoneById} from '../../action'
+import BasketCart from '../../components/basketCart'
 import {getPhonesById} from '../../selectors'
+import {addPhoneToBasket} from '../../action'
 
 class Phone extends Component {
   componentDidMount() {
@@ -54,7 +57,27 @@ class Phone extends Component {
     )
   }
   renderSidebar() {
-    return <div>Sidebar</div>
+    const {phone, addPhoneToBasket} = this.props
+    return (
+      <div>
+        <p className="lead">Quick shop</p>
+        <BasketCart />
+        <div className="form-group">
+          <h1>{phone.name}</h1>
+          <h2>${phone.price}</h2>
+        </div>
+        <Link to="/" className="btn btn-info btn-block">
+          Back to store
+        </Link>
+        <div
+          className="btn btn-success btn-block"
+          type="button"
+          onClick={() => addPhoneToBasket(phone.id)}
+        >
+          Add to Cart
+        </div>
+      </div>
+    )
   }
 
   render() {
@@ -80,6 +103,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   fetchPhoneById,
+  addPhoneToBasket,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Phone)

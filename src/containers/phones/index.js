@@ -46,7 +46,8 @@ class Phones extends Component {
     return (
       <Layout>
         <div className="books row">
-          {phones.map((phone, index) => this.renderPhone(phone, index))}
+          {phones &&
+            phones.map((phone, index) => this.renderPhone(phone, index))}
         </div>
         <div className="row">
           <div className="col-md-12">
