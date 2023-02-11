@@ -9,10 +9,12 @@ import {
   FETCH_PHONES_BY_ID_SUCCESS,
   FETCH_PHONES_BY_ID_FAILURE,
   ADD_PHONE_TO_BASKET,
+  DELETE_PHONE_TO_BASKET,
   SEARCH_PHONE,
   FETCH_CATEGORIES_START,
   FETCH_CATEGORIES_SUCCESS,
   FETCH_CATEGORIES_FAILURE,
+  CLEAN_BASCET,
 } from './actionTypes'
 
 import {
@@ -92,3 +94,12 @@ export const searchPhone = (text) => (dispatch) =>
     type: SEARCH_PHONE,
     payload: text,
   })
+
+export const removePhoneFromBasket = (id) => (dispatch) =>
+  dispatch({type: DELETE_PHONE_TO_BASKET, payload: id})
+
+export const cleanBasket = () => (dispatch) => dispatch({type: CLEAN_BASCET})
+
+export const basketCheckout = (phones) => {
+  alert(JSON.stringify(phones))
+}
