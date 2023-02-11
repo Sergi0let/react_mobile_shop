@@ -2,13 +2,19 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
-import {fetchPhones, loadMorePhones, addPhoneToBasket} from '../../action'
+import {
+  fetchPhones,
+  fetchCategories,
+  loadMorePhones,
+  addPhoneToBasket,
+} from '../../action'
 import {getPhonesSelector} from '../../selectors'
 import Layout from '../layout'
 
 class Phones extends Component {
   componentDidMount() {
     this.props.fetchPhones()
+    this.props.fetchCategories()
   }
   renderPhone(phone, index) {
     const shortDescription = `${phone.description.slice(0, 60)}...`
@@ -64,12 +70,13 @@ class Phones extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  phones: getPhonesSelector(state),
+const mapStateToProps = (state, ownProps) => ({
+  phones: getPhonesSelector(state, ownProps),
 })
 
 const mapDispatchToProps = {
   fetchPhones,
+  fetchCategories,
   loadMorePhones,
   addPhoneToBasket,
 }
