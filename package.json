@@ -40,8 +40,8 @@
       "last 1 safari version"
     ]
   },
-
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  }
+  },
+  "homepage": "https://github.com/Sergi0let/react_mobile_shop"
 }
