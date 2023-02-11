@@ -5,6 +5,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "connected-react-router": "^6.4.0",
+    "gh-pages": "^5.0.0",
     "history": "^4.9.0",
     "ramda": "^0.28.0",
     "react": "^16.8.6",
@@ -21,6 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,5 +40,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://github.com/Sergi0let/react_mobile_shop"
 }
