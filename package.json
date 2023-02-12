@@ -2,6 +2,7 @@
   "name": "code-internet-shop-react-redux",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sergi0let.github.io/react_mobile_shop",
   "dependencies": {
     "classnames": "^2.2.6",
     "connected-react-router": "^6.4.0",
@@ -42,6 +43,5 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  },
-  "homepage": "https://github.com/Sergi0let/react_mobile_shop"
+  }
 }
